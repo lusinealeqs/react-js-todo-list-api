@@ -163,6 +163,16 @@ request body
 jwt: `{JWT string}` (required)
 `}`  
 
+#### Refresh token
+request url `API_HOST/user/:id/token`
+
+request method `PUT`
+
+request body
+`{`
+refreshToken: `{string}` (required)
+`}`
+
 #### Get user info
 request url `API_HOST/user`
 
@@ -181,7 +191,7 @@ surname: `{String}`
 
 
 #### Sending contact form
-request url `API_HOST/contact`
+request url `API_HOST/form`
 
 request method `POST`
 
