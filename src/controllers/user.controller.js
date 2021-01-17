@@ -51,8 +51,8 @@ class UserController {
             await tokenModel.save();
             res.json(token);
         }
-        catch (err) {
-            res.status(403).json(err);
+        catch (error) {
+            next(error);
         }
     }
     
@@ -113,7 +113,7 @@ class UserController {
                 throw errorConfig.invalidRefreshToken;
             }
     
-            const newTokenPair = await this.generateJWT({user_id: id});
+            const newTokenPair = await this.generateJWT({userId: id});
             token = Object.assign(token, newTokenPair);
     
             await token.save();
